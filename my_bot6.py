@@ -1,4 +1,5 @@
 import os
+token = os.environ.get("TELEGRAM_TOKEN")
 import json
 import random
 from datetime import timedelta
@@ -118,7 +119,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await view_rating(update, context)
 
 def main():
-    token = os.environ.get("BOT_TOKEN")
     webhook_url = os.environ.get("WEBHOOK_URL")
 
     application = Application.builder().token(token).build()
